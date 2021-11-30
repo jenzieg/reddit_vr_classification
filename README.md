@@ -1,19 +1,29 @@
 # VR Subreddit NLP Project
+Jen Zieger
 
-### Project Executive Summary
+## Contents:
+- [Overview](#Overview)
+- [Problem Statement](#Problem-Statement)
+- [Strategy](#Strategy)
+- [Evaluation](#Evaluation)
+- [Conclusions](#Conclusions)
+- [Recommendations](#Recommendations)
 
-#### Problem Statement
-Reddit is planning to deploy an improved model for predicting what video game-related subreddit a submission comes from. I've been contracted by Reddit to work on this project with a focus on virtual reality and build a model that accurately predicts whether a submission came from the subreddit [`r/PSVR`](https://www.reddit.com/r/PSVR/) or [`r/oculus`](https://www.reddit.com/r/oculus/). 
-
-#### Overview
+<a name="Overview"></a>
+## Overview
 According to Merriam-Webster Dictionary, virtual reality, also known as VR, is an artificial environment which is experienced through sensory stimuli (such as sights and sounds) provided by a computer and in which one's actions partially determine what happens in the environment [[1]](https://www.merriam-webster.com/dictionary/virtual%20reality). Reddit is a network of millions of people who are connected through thousands of communities where they can connect by sharing their interests, hobbies, and passions [[2]](https://www.redditinc.com/).
 
-#### Strategy
+<a name="Problem-Statement"></a>
+## Problem Statement
+Reddit is planning to deploy an improved model for predicting what video game-related subreddit a submission comes from. I've been contracted by Reddit to work on this project with a focus on virtual reality and build a model that accurately predicts whether a submission came from the subreddit [`r/PSVR`](https://www.reddit.com/r/PSVR/) or [`r/oculus`](https://www.reddit.com/r/oculus/). 
+
+<a name="Strategy"></a>
+## Strategy
 **Data Collection** <br>
 Using [Pushshift's](https://github.com/pushshift/api) API, I collected over 1500 submissions from the /r/PSVR and /r/oculus subreddits, totaling 3000+ submissions. The date range of the collection was from May 19th, 2021 to Oct 4th, 2021.
 <br>
 <br>
-To view my data collection process, please go to [VR Subreddit Data Collection](./VR-subreddit-data-collection.ipynb)
+To view my data collection process, please go to [VR Subreddit Data Collection](./data/VR-subreddit-data-collection.ipynb)
 
 
 **Data Dictionary**
@@ -56,7 +66,8 @@ The following methods were used to develop these models:
 
 ![MNB Confusion Matrix](./images/mnb.png)
 
-**Evaluation** <br>
+<a name="Evaluation"></a>
+## Evaluation <br>
 Since we were not biased against False Negatives compared to False Positives, the F1 score was the score that was the final determinant to which model to go with. The MNB model had the best accuracy score, Recall Rate, Misclassification Rate, and F1 Score compared to the other models tested.
 
 MNB Metric Evaluation: 
@@ -73,7 +84,8 @@ MNB Metric Evaluation:
 - F1 Score: 0.900
     * Since we are not biased to PSVR or Oculus, this is the mean score of precision and recall. 
 
-**Conclusions** <br>
+<a name="Conclusions"></a>
+## Conclusions <br>
 After fitting a plethora of models, it turns out my best model was my first model, Multinomial Naive Bayes. With an accuracy rate of 90.2% , this model performed 40.2% better than the baseline model. 
 
 A Multinomial Naive Bayes model with Count Vectorization and the following parameters should be used for predicting whether a submission comes from the r/oculus or r/PSVR subreddit: 
@@ -84,7 +96,8 @@ A Multinomial Naive Bayes model with Count Vectorization and the following param
 
 However, this model still needs some improvement as about 9% of the submissions were being misclassified.
 
-**Recommendations**
+<a name="Recommendations"></a>
+## Recommendations <br>
 
 While this is a great model, I think it could use some improvement before deploying it across the video game prediction algorithms. 
 <br>
