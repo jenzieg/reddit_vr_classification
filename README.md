@@ -23,7 +23,7 @@ Reddit is planning to deploy an improved model for predicting what video game-re
 Using [Pushshift's](https://github.com/pushshift/api) API, I collected over 1500 submissions from the /r/PSVR and /r/oculus subreddits, totaling 3000+ submissions. The date range of the collection was from May 19th, 2021 to Oct 4th, 2021.
 <br>
 <br>
-To view my data collection process, please go to [VR Subreddit Data Collection](./data/VR-subreddit-data-collection.ipynb)
+To view my data collection process, please go to the VR Subreddit Data Collection notebook.
 
 
 **Data Dictionary**
